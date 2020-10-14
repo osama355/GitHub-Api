@@ -18,7 +18,7 @@ const User=()=>{
         <div className="main">
             <div className="body_head">
                 <h2 className="heading">
-                    GitHub User
+                    GitHub Users
                 </h2>
                 <GitHubIcon className="icon" />
             </div>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './Style/Repo.css';
+import './Style/User.css';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Repo=()=>{
 
@@ -12,21 +15,31 @@ const Repo=()=>{
         setRepo("")
     }
     return(
-        <div>
-            <input placeholder="Search repository..." value={repo} onChange={(e)=>{setRepo(e.target.value)}}/>
-            <button onClick={search} >Search</button> 
-
-            <ul>
-                {repoData.map((value)=>(
-                    <li key={value.id}>
-                        <p>
-                            {value.name}
-                        </p>
-                        <p>{value.description}</p>
-                        <a href={value.url}>Link</a>
-                    </li>
-                ))}
-            </ul>
+        <div className="main">
+            <div className="body_head">
+                <h2 className="heading">
+                    GitHub Repositories
+                </h2>
+                <GitHubIcon className="icon" />
+            </div>
+            <div className="form">
+                <input className="search_box" placeholder="Find a repository..." value={repo} onChange={(e)=>{setRepo(e.target.value)}}/>
+                <button onClick={search} >Search</button> 
+            </div>
+            <div className="result">
+                <ul className="list1">
+                    {repoData.map((value)=>(
+                        <li key={value.id}>
+                            <p>
+                                {value.name}
+                            </p>
+                            <p>{value.description}</p>
+                            <a href={value.url}>Link</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+           
         </div>
     );
 }
